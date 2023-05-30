@@ -4,7 +4,7 @@ on:
     branches:
       - master
 env:
-  AWS_REGION: us-east-2                   # set this to your preferred AWS region, e.g. us-west-1
+  AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
   ECR_REPOSITORY: reactloans-devops          # set this to your Amazon ECR repository name
   ECS_SERVICE: ReactService                 # set this to your Amazon ECS service name
   ECS_CLUSTER: reactCluster                 # set this to your Amazon ECS cluster name
@@ -25,15 +25,10 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-
-    #- name: Configure AWS Credentials
-    #  uses: aws-actions/configure-aws-credentials@v2
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v2
       with:
         role-to-assume: arn:aws:iam::542629511084:role/github-action-role
-        #aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        #aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
         
     - name: Login to Amazon ECR
