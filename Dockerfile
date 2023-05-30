@@ -1,5 +1,5 @@
 #STAGE 1
-FROM node:18.16.0-alpine as build
+FROM node:16.20.0-alpine as build
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
