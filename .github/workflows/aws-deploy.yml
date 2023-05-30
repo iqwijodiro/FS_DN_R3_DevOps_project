@@ -4,7 +4,7 @@ on:
     branches:
       - master
 env:
-  AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
+  AWS_REGION: us-east-2                   # set this to your preferred AWS region, e.g. us-west-1
   ECR_REPOSITORY: reactloans-devops          # set this to your Amazon ECR repository name
   ECS_SERVICE: ReactService                 # set this to your Amazon ECS service name
   ECS_CLUSTER: reactCluster                 # set this to your Amazon ECS cluster name
